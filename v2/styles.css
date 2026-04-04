@@ -381,7 +381,7 @@ li {
   transform: rotate(5deg);
 }
 
-.circle-row {
+.guiding-notes {
   margin: -0.9rem auto 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -391,45 +391,51 @@ li {
   z-index: 2;
 }
 
-.circle-note,
-.resource-orb {
+.guide-card {
+  position: relative;
   display: grid;
-  align-content: center;
-  justify-items: center;
-  min-height: 12rem;
-  aspect-ratio: 1;
-  padding: 1.3rem;
-  text-align: center;
+  align-content: start;
+  min-height: 11.25rem;
+  padding: 1.25rem 1.3rem 1.2rem;
+  text-align: left;
   border: 3px solid var(--ink);
   box-shadow: 0 10px 0 rgba(53, 32, 21, 0.12);
+  background: rgba(255, 251, 242, 0.96);
 }
 
-.circle-note h2,
-.resource-orb h2 {
+.guide-card::before {
+  content: "";
+  position: absolute;
+  top: -0.65rem;
+  left: 1.15rem;
+  width: 4.3rem;
+  height: 1rem;
+  border: 2px solid rgba(53, 32, 21, 0.14);
+  background: rgba(255, 252, 246, 0.82);
+  transform: rotate(-4deg);
+}
+
+.guide-card h2,
+.resource-card h2 {
   font-size: 1.6rem;
 }
 
-.circle-note-gold,
-.orb-gold {
-  background: rgba(246, 207, 112, 0.9);
-  border-radius: 43% 57% 52% 48% / 55% 46% 54% 45%;
+.guide-card-gold {
+  background: rgba(246, 207, 112, 0.78);
+  border-radius: 1.6rem 1.2rem 1.5rem 1rem;
+  transform: rotate(-1.4deg);
 }
 
-.circle-note-blue,
-.orb-blue {
+.guide-card-blue {
   background: rgba(215, 239, 255, 0.95);
-  border-radius: 56% 44% 47% 53% / 47% 57% 43% 53%;
+  border-radius: 1rem 1.7rem 1.3rem 1.6rem;
+  transform: translateY(0.6rem);
 }
 
-.circle-note-rose,
-.orb-rose {
+.guide-card-rose {
   background: rgba(248, 213, 223, 0.95);
-  border-radius: 50% 50% 58% 42% / 46% 54% 46% 54%;
-}
-
-.orb-green {
-  background: rgba(217, 239, 188, 0.95);
-  border-radius: 44% 56% 49% 51% / 56% 43% 57% 44%;
+  border-radius: 1.35rem 1rem 1.7rem 1.25rem;
+  transform: rotate(1.2deg);
 }
 
 .feature-mix,
@@ -716,10 +722,64 @@ li {
   border-radius: 1rem;
 }
 
-.resource-circles {
+.resource-catalog {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.resource-card {
+  position: relative;
+  display: grid;
+  align-content: start;
+  min-height: 15rem;
+  padding: 1.25rem 1.2rem 1.15rem;
+  border: 3px solid var(--ink);
+  box-shadow: 0 9px 0 rgba(53, 32, 21, 0.1);
+  background: rgba(255, 251, 243, 0.96);
+}
+
+.resource-card::before {
+  content: "";
+  position: absolute;
+  top: -0.95rem;
+  left: 1rem;
+  width: 6rem;
+  height: 1.2rem;
+  border: 3px solid var(--ink);
+  border-bottom: none;
+  border-radius: 0.8rem 0.8rem 0 0;
+  background: inherit;
+}
+
+.resource-card-label {
+  margin: 0 0 0.45rem;
+  font-family: "Kalam", cursive;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #834000;
+}
+
+.resource-card-gold {
+  background: rgba(246, 207, 112, 0.8);
+  transform: rotate(-1deg);
+}
+
+.resource-card-blue {
+  background: rgba(215, 239, 255, 0.94);
+  transform: translateY(1rem);
+}
+
+.resource-card-rose {
+  background: rgba(248, 213, 223, 0.94);
+  transform: rotate(1deg);
+}
+
+.resource-card-green {
+  background: rgba(217, 239, 188, 0.94);
+  transform: translateY(-0.4rem);
 }
 
 .resource-notes {
@@ -774,7 +834,7 @@ li {
   .sample-grid,
   .lesson-wall-grid,
   .timeline-strip,
-  .resource-circles,
+  .resource-catalog,
   .resource-notes {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -827,11 +887,11 @@ li {
     width: 8.5rem;
   }
 
-  .circle-row,
+  .guiding-notes,
   .sample-grid,
   .lesson-wall-grid,
   .timeline-strip,
-  .resource-circles,
+  .resource-catalog,
   .resource-notes {
     grid-template-columns: 1fr;
   }
