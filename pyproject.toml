@@ -1,0 +1,7 @@
+[project]
+name = "carrtoons"
+version = "0.1.0"
+description = "Static CarrToons website prototype for GitHub Pages"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []

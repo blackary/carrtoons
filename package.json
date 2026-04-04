@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "qa:smoke": "playwright test tests/smoke.spec.js --reporter=line"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1"
+  }
+}

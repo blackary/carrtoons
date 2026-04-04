@@ -1,0 +1,16 @@
+.DS_Store
+.tmp/
+.venv/
+_site/
+__pycache__/
+uv.lock
+node_modules/
+playwright-report/
+test-results/
+hello.py
+.python-version
+Gmail - Website.pdf
+Looking at Websites.pdf
+New Home Page Idea 4_3_26.pdf
+Possible plan revised PDF.pdf
+Website Plan 2 PDF.pdf
