@@ -9,6 +9,7 @@ The site is plain HTML, CSS, JavaScript, image assets, and PDFs. There is no bui
 - Root files are the original `v1` concept.
 - `v2/` is a bright multipage author-and-books concept built from Karen's homepage sketch and website notes.
 - `v3/` is a single-page family reading room concept with a more curriculum-forward layout.
+- `v4/` is an Eric-Carle-inspired single-page concept with collage circles, airy white space, and centered content islands.
 
 ## Run locally
 
