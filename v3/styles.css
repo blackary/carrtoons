@@ -83,7 +83,6 @@ li {
 }
 
 .rail-card,
-.rail-version-note,
 .folder-section,
 .sample-tab,
 .small-memory {
@@ -92,8 +91,7 @@ li {
   box-shadow: var(--shadow);
 }
 
-.rail-card,
-.rail-version-note {
+.rail-card {
   padding: 1.25rem;
 }
 
@@ -161,14 +159,6 @@ li {
 
 .rail-nav a:nth-child(5) {
   border-left-color: var(--rose);
-}
-
-.rail-version-note p {
-  margin: 0;
-}
-
-.rail-version-note p + p {
-  margin-top: 0.45rem;
 }
 
 .main-column {
@@ -496,8 +486,7 @@ li {
   }
 
   .folder-section,
-  .rail-card,
-  .rail-version-note {
+  .rail-card {
     padding: 1.2rem;
   }
 

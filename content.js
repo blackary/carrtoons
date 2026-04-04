@@ -227,7 +227,7 @@ window.siteContent = {
     tag: "Other Resources",
     title: "Karen is also imagining a wider circle of helps for parents and children.",
     intro:
-      "Her planning pages point toward more books, drawing helps, and class materials. This section keeps that future sense alive without pretending those resources are already finished.",
+      "More books, drawing helps, and class materials may be added here over time, giving parents and children more ways to keep returning to wisdom together.",
     bubbles: [
       {
         toneClass: "bubble-gold",
@@ -254,7 +254,7 @@ window.siteContent = {
       tag: "For Parents",
       title: "Warm, welcoming, and serious about wisdom.",
       text:
-        "Karen's own design notes kept returning to the same idea: let the colors feel happy, let the drawings feel inviting, and keep the purpose plain. This site follows that lead.",
+        "Happy colors, welcoming drawings, and a plain purpose belong together here. Children should feel invited in, and parents should know the books are teaching something real.",
       image: {
         src: "assets/crops/laugh-drawing.png",
         alt: "Hand-drawn children laughing together",
