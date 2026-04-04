@@ -82,4 +82,22 @@ test.describe("CarrToons concept variants", () => {
     const pdfResponse = await request.get(`${BASE_URL}/5%20Genre%20Revised%20copy.pdf`);
     expect(pdfResponse.ok()).toBeTruthy();
   });
+
+  test("v6 editorial folio renders and section navigation works", async ({ page, request }) => {
+    const response = await request.get(`${BASE_URL}/v6/index.html`);
+    expect(response.ok()).toBeTruthy();
+
+    await page.goto(`${BASE_URL}/v6/index.html`, { waitUntil: "networkidle" });
+
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("Reading Ledger");
+    await expect(page.locator(".rail-nav a")).toHaveCount(5);
+    await expect(page.locator(".plate")).toHaveCount(3);
+    await expect(page.locator(".shelf-row")).toHaveCount(5);
+
+    await page.getByRole("link", { name: /Karen Carr/i }).first().click();
+    await expect(page).toHaveURL(/#karen$/);
+
+    const pdfResponse = await request.get(`${BASE_URL}/1%20Preface%20.pdf`);
+    expect(pdfResponse.ok()).toBeTruthy();
+  });
 });

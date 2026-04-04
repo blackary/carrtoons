@@ -27,12 +27,13 @@ test.describe("CarrToons static site", () => {
       "/v3/index.html",
       "/v4/index.html",
       "/v5/index.html",
+      "/v6/index.html",
     ];
 
     await page.goto(BASE_URL, { waitUntil: "networkidle" });
 
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("Five different directions");
-    await expect(page.locator(".version-entry")).toHaveCount(5);
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("Six different directions");
+    await expect(page.locator(".version-entry")).toHaveCount(6);
 
     for (const path of versionPaths) {
       const response = await request.get(`${BASE_URL}${path}`);
@@ -41,6 +42,7 @@ test.describe("CarrToons static site", () => {
 
     await expect(page.getByRole("link", { name: "Open v1" })).toHaveAttribute("href", "v1/");
     await expect(page.getByRole("link", { name: "Open v5" })).toHaveAttribute("href", "v5/");
+    await expect(page.getByRole("link", { name: "Open v6" })).toHaveAttribute("href", "v6/");
   });
 
   test("v1 desktop: renders content, anchor navigation, and linked PDFs", async ({ page, request }) => {

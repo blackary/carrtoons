@@ -140,6 +140,10 @@ p {
   border-top-color: var(--green);
 }
 
+.version-entry-v6 {
+  border-top-color: #8a2f22;
+}
+
 .version-label {
   display: grid;
   gap: 0.45rem;

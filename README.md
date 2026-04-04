@@ -12,6 +12,7 @@ The site is plain HTML, CSS, JavaScript, image assets, and PDFs. There is no bui
 - `v3/` is a single-page family reading room concept with a more curriculum-forward layout.
 - `v4/` is an Eric-Carle-inspired single-page concept with collage circles, airy white space, and centered content islands.
 - `v5/` is a full-width image-led scroll with large visual bands built from Karen's artwork and page renders.
+- `v6/` is an editorial reading-ledger concept with a sticky contents rail and a stricter folio layout.
 
 ## Run locally
 
@@ -38,7 +39,7 @@ npm run qa:smoke
 This covers the root version directory plus desktop and mobile checks for `v1/`, including
 content rendering from `v1/content.js`, image loading, and linked PDF availability.
 
-To run the additional concept checks for `v2/` through `v5/`:
+To run the additional concept checks for `v2/` through `v6/`:
 
 ```bash
 npx playwright test tests/concepts.spec.js --reporter=line
@@ -57,7 +58,7 @@ Most future edits to `v1/` should happen in `v1/content.js`.
 - Add future resources in `siteContent.resourcesSection.bubbles`
 - Optional: set `layoutClass` on a book or lesson card if you want it to use one of the existing alternate layouts instead of the default stacked card style
 
-Versions `v2/` through `v5/` are self-contained HTML and CSS files inside their own folders.
+Versions `v2/` through `v6/` are self-contained HTML and CSS files inside their own folders.
 
 ## Editing images and PDFs
 
@@ -85,6 +86,7 @@ On pushes to `main`, it stages only the public site files into a Pages artifact:
 - `v3/`
 - `v4/`
 - `v5/`
+- `v6/`
 - `assets/`
 - the specific public excerpt PDFs linked on the site
 - `.nojekyll`

@@ -39,6 +39,7 @@ jobs:
           cp -R v3 _site/v3
           cp -R v4 _site/v4
           cp -R v5 _site/v5
+          cp -R v6 _site/v6
           cp "1 Preface .pdf" _site/
           cp "1 The Word of God  WPDF.pdf" _site/
           cp "2 Context.pdf" _site/
