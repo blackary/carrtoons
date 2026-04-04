@@ -4,6 +4,12 @@ Static website prototype for Karen Carr's CarrToons project.
 
 The site is plain HTML, CSS, JavaScript, image assets, and PDFs. There is no build step.
 
+## Versions
+
+- Root files are the original `v1` concept.
+- `v2/` is a bright multipage author-and-books concept built from Karen's homepage sketch and website notes.
+- `v3/` is a single-page family reading room concept with a more curriculum-forward layout.
+
 ## Run locally
 
 ```bash
@@ -28,6 +34,12 @@ npm run qa:smoke
 
 This covers desktop and mobile navigation, content rendering from `content.js`, image loading,
 and linked PDF availability.
+
+To run the additional concept checks for `v2/` and `v3/`:
+
+```bash
+npx playwright test tests/concepts.spec.js --reporter=line
+```
 
 ## Editing content
 

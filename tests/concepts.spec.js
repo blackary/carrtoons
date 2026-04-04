@@ -1,0 +1,46 @@
+const { test, expect } = require("@playwright/test");
+
+const BASE_URL = "http://127.0.0.1:8000";
+
+test.describe("CarrToons concept variants", () => {
+  test("v2 pages render and key links resolve", async ({ page, request }) => {
+    const pages = [
+      "/v2/index.html",
+      "/v2/books.html",
+      "/v2/about.html",
+      "/v2/resources.html",
+    ];
+
+    for (const path of pages) {
+      const response = await request.get(`${BASE_URL}${path}`);
+      expect(response.ok(), `Expected ${path} to load`).toBeTruthy();
+    }
+
+    await page.goto(`${BASE_URL}/v2/index.html`, { waitUntil: "networkidle" });
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("CarrToons helps kids");
+    await page.getByRole("link", { name: "Browse the books" }).click();
+    await expect(page).toHaveURL(/\/v2\/books\.html$/);
+
+    await expect(page.locator(".chapter-links li")).toHaveCount(4);
+    const pdfResponse = await request.get(`${BASE_URL}/1%20The%20Word%20of%20God%20%20WPDF.pdf`);
+    expect(pdfResponse.ok()).toBeTruthy();
+  });
+
+  test("v3 tabbed chapter explorer switches panels", async ({ page, request }) => {
+    await page.goto(`${BASE_URL}/v3/index.html`, { waitUntil: "networkidle" });
+
+    await expect(page.getByRole("heading", { level: 2 }).first()).toContainText("warm place");
+    await expect(page.locator("#panel-word")).toBeVisible();
+    await expect(page.locator("#panel-context")).toBeHidden();
+
+    await page.getByRole("tab", { name: "Context" }).click();
+    await expect(page.locator("#panel-context")).toBeVisible();
+    await expect(page.locator("#panel-word")).toBeHidden();
+
+    await page.getByRole("tab", { name: "Genre" }).click();
+    await expect(page.locator("#panel-genre")).toBeVisible();
+
+    const pdfResponse = await request.get(`${BASE_URL}/5%20Genre%20Revised%20copy.pdf`);
+    expect(pdfResponse.ok()).toBeTruthy();
+  });
+});

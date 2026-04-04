@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CarrToons v3 | A family reading room</title>
+    <meta
+      name="description"
+      content="CarrToons v3 is a curriculum-forward static concept for Karen Carr's books, built as a family reading room for parents and children."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=IBM+Plex+Sans:wght@400;500;700&family=Newsreader:opsz,wght@6..72,500;6..72,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="v3">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="layout">
+      <aside class="side-rail">
+        <div class="rail-card">
+          <p class="rail-tag">CarrToons</p>
+          <h1>Tools to Help Kids Become Wise</h1>
+          <p class="rail-verse">Proverbs 4:7</p>
+          <p class="rail-copy">
+            This version treats the site less like an author homepage and more like a reading room
+            for parents opening wise books with their children.
+          </p>
+        </div>
+
+        <nav class="rail-nav" aria-label="Section navigation">
+          <a href="#start-here">Start Here</a>
+          <a href="#open-the-books">Open the Books</a>
+          <a href="#how-karen-teaches">How Karen Teaches</a>
+          <a href="#meet-karen">Meet Karen</a>
+          <a href="#future-helps">Future Helps</a>
+        </nav>
+
+        <div class="rail-version-note">
+          <p>Version 3</p>
+          <p>Single page, folder tabs, fewer “author site” cues, more family-use cues.</p>
+        </div>
+      </aside>
+
+      <main id="main-content" class="main-column">
+        <section class="folder-section hero-folder" id="start-here">
+          <div class="folder-tab folder-tab-rust">Start Here</div>
+          <div class="hero-grid">
+            <div class="hero-text">
+              <p class="kicker">What is CarrToons for?</p>
+              <h2>A warm place for families to open books that train wise habits.</h2>
+              <p>
+                Karen's PDFs kept pointing to more than illustration. They pointed to explanation,
+                rebuke, context, careful reading, and parents helping children see life the way God
+                sees it. This design starts with that practical purpose.
+              </p>
+              <p>
+                The site is still handmade and welcoming, but it behaves more like a reading guide
+                than a glossy promotional page.
+              </p>
+              <div class="hero-links">
+                <a class="folder-button" href="#open-the-books">Open the books</a>
+                <a class="paper-link" href="../1%20Preface%20.pdf" target="_blank" rel="noreferrer">Read the preface</a>
+              </div>
+            </div>
+
+            <figure class="hero-sheet">
+              <img
+                src="../assets/crops/hero-reading.png"
+                alt="Karen Carr drawing of children reading together"
+              />
+              <figcaption>
+                Karen's own note was clear: the focus picture should show children reading the Bible.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="folder-section explorer-folder" id="open-the-books">
+          <div class="folder-tab folder-tab-blue">Open the Books</div>
+          <div class="section-head">
+            <p class="kicker">Sample Chapter Explorer</p>
+            <h2>Choose a chapter and read the book like a family would.</h2>
+          </div>
+
+          <div class="explorer-layout">
+            <div class="explorer-tabs" role="tablist" aria-label="Book chapter previews">
+              <button class="sample-tab is-active" type="button" role="tab" aria-selected="true" data-panel="panel-word">
+                The Word of God
+              </button>
+              <button class="sample-tab" type="button" role="tab" aria-selected="false" data-panel="panel-context">
+                Context
+              </button>
+              <button class="sample-tab" type="button" role="tab" aria-selected="false" data-panel="panel-words">
+                The Meaning of Words
+              </button>
+              <button class="sample-tab" type="button" role="tab" aria-selected="false" data-panel="panel-genre">
+                Genre
+              </button>
+            </div>
+
+            <div class="explorer-panels">
+              <article class="sample-panel is-active" id="panel-word" role="tabpanel">
+                <figure class="panel-figure">
+                  <img src="../assets/renders/word-of-god.png" alt="Preview page from The Word of God chapter" />
+                </figure>
+                <div class="panel-copy">
+                  <p class="panel-tag">Chapter sample</p>
+                  <h3>The Word of God</h3>
+                  <p>
+                    Starts where Karen's teaching should start: God speaks. Children see that God's
+                    word comes with authority before they are asked to interpret anything else.
+                  </p>
+                  <a class="folder-button" href="../1%20The%20Word%20of%20God%20%20WPDF.pdf" target="_blank" rel="noreferrer">Open PDF</a>
+                </div>
+              </article>
+
+              <article class="sample-panel" id="panel-context" role="tabpanel" hidden>
+                <figure class="panel-figure">
+                  <img src="../assets/renders/context.png" alt="Preview page from the Context chapter" />
+                </figure>
+                <div class="panel-copy">
+                  <p class="panel-tag">Chapter sample</p>
+                  <h3>Context</h3>
+                  <p>
+                    A family situation becomes the first lesson in reading the whole message before
+                    trying to understand one small part.
+                  </p>
+                  <a class="folder-button" href="../2%20Context.pdf" target="_blank" rel="noreferrer">Open PDF</a>
+                </div>
+              </article>
+
+              <article class="sample-panel" id="panel-words" role="tabpanel" hidden>
+                <figure class="panel-figure">
+                  <img src="../assets/renders/meaning-page-10.png" alt="Preview page from The Meaning of Words chapter" />
+                </figure>
+                <div class="panel-copy">
+                  <p class="panel-tag">Chapter sample</p>
+                  <h3>The Meaning of Words</h3>
+                  <p>
+                    Karen keeps abstract ideas from floating away. She shows children that words,
+                    phrases, and examples have to be handled carefully.
+                  </p>
+                  <a class="folder-button" href="../4%20the%20meaning%20of%20words%20%20copy2.pdf" target="_blank" rel="noreferrer">Open PDF</a>
+                </div>
+              </article>
+
+              <article class="sample-panel" id="panel-genre" role="tabpanel" hidden>
+                <figure class="panel-figure">
+                  <img src="../assets/renders/genre-page-8.png" alt="Preview page from the Genre chapter" />
+                </figure>
+                <div class="panel-copy">
+                  <p class="panel-tag">Chapter sample</p>
+                  <h3>Genre</h3>
+                  <p>
+                    Children begin to notice the difference between commands, stories, letters, and
+                    other kinds of writing, which is exactly the kind of long-term wisdom Karen had
+                    in mind.
+                  </p>
+                  <a class="folder-button" href="../5%20Genre%20Revised%20copy.pdf" target="_blank" rel="noreferrer">Open PDF</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="folder-section method-folder" id="how-karen-teaches">
+          <div class="folder-tab folder-tab-gold">How Karen Teaches</div>
+          <div class="section-head">
+            <p class="kicker">Three habits from the source PDFs</p>
+            <h2>She teaches with drawings, ordinary life, and Bible language side by side.</h2>
+          </div>
+
+          <div class="method-strip">
+            <article class="method-note note-blue">
+              <img src="../assets/crops/hero-candy.png" alt="Candy lesson drawing from CarrToons" />
+              <h3>Draw it</h3>
+              <p>Instead of leaving wisdom abstract, Karen gives it a body, a room, a table, a shelf, a child.</p>
+            </article>
+
+            <article class="method-note note-cream">
+              <img src="../assets/crops/hero-prayer.png" alt="Praying child drawing from CarrToons" />
+              <h3>Connect it to life</h3>
+              <p>Children can enter the lesson because the situations already belong to their world.</p>
+            </article>
+
+            <article class="method-note note-rose">
+              <img src="../assets/renders/word-of-god.png" alt="The Word of God chapter preview" />
+              <h3>Name the truth clearly</h3>
+              <p>The site should not just feel sweet. It should make the teaching plain.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="folder-section about-folder" id="meet-karen">
+          <div class="folder-tab folder-tab-olive">Meet Karen</div>
+          <div class="about-grid">
+            <div class="about-copy">
+              <p class="kicker">Why her story matters</p>
+              <h2>These books came out of decades of teaching, not a sudden content plan.</h2>
+              <p>
+                Karen loved drawing as a little girl, taught art in Indiana schools, homeschooled
+                her three boys, taught in church, and kept reaching for pictures when words alone
+                did not feel enough.
+              </p>
+              <p>
+                That is why a calmer, more useful site direction also makes sense for her. It lets
+                families feel the trustworthiness of the work.
+              </p>
+            </div>
+
+            <figure class="portrait-sheet">
+              <img src="../assets/crops/karen-portrait-clean.png" alt="Portrait of Karen Carr" />
+            </figure>
+
+            <figure class="small-memory memory-left">
+              <img src="../assets/crops/daisy-sketch.png" alt="Karen's early Daisy drawing" />
+              <figcaption>Early homemade books about Daisy stayed with her.</figcaption>
+            </figure>
+
+            <figure class="small-memory memory-right">
+              <img src="../assets/crops/art-teacher-drawing.png" alt="Drawing of Karen as an art teacher" />
+              <figcaption>Students also remembered the teacher who taught through pictures.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="folder-section future-folder" id="future-helps">
+          <div class="folder-tab folder-tab-soft">Future Helps</div>
+          <div class="future-grid">
+            <div class="future-copy">
+              <p class="kicker">Keep the future open</p>
+              <h2>More books, drawing helps, and class materials can fit here without pretending they already exist.</h2>
+              <ul class="future-list">
+                <li>Make Your Own Wise Child Book</li>
+                <li>The Light of the World</li>
+                <li>The Love Loop</li>
+                <li>Book versions of church retreat classes</li>
+              </ul>
+            </div>
+
+            <div class="future-note">
+              <p class="future-hand">A note from Karen's planning pages</p>
+              <p>
+                Keep contact simple. Share something new when there really is something new. The main
+                point is still wise kids.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
