@@ -6,7 +6,8 @@ The site is plain HTML, CSS, JavaScript, image assets, and PDFs. There is no bui
 
 ## Versions
 
-- Root files are the original `v1` concept.
+- Root files now provide a version directory page that links to each concept.
+- `v1/` is the original editable single-page concept.
 - `v2/` is a bright multipage author-and-books concept built from Karen's homepage sketch and website notes.
 - `v3/` is a single-page family reading room concept with a more curriculum-forward layout.
 - `v4/` is an Eric-Carle-inspired single-page concept with collage circles, airy white space, and centered content islands.
@@ -34,8 +35,8 @@ Then run the Playwright smoke test in another:
 npm run qa:smoke
 ```
 
-This covers desktop and mobile navigation, content rendering from `content.js`, image loading,
-and linked PDF availability.
+This covers the root version directory plus desktop and mobile checks for `v1/`, including
+content rendering from `v1/content.js`, image loading, and linked PDF availability.
 
 To run the additional concept checks for `v2/` through `v5/`:
 
@@ -45,7 +46,7 @@ npx playwright test tests/concepts.spec.js --reporter=line
 
 ## Editing content
 
-Most future edits should happen in `content.js`.
+Most future edits to `v1/` should happen in `v1/content.js`.
 
 - Change homepage copy in `siteContent.hero`
 - Change book section text in `siteContent.booksSection`
@@ -56,17 +57,20 @@ Most future edits should happen in `content.js`.
 - Add future resources in `siteContent.resourcesSection.bubbles`
 - Optional: set `layoutClass` on a book or lesson card if you want it to use one of the existing alternate layouts instead of the default stacked card style
 
+Versions `v2/` through `v5/` are self-contained HTML and CSS files inside their own folders.
+
 ## Editing images and PDFs
 
 - Put new images under `assets/`
 - Put new PDFs in the repo root if you want them linked like the current chapter samples
-- After adding a file, update the matching `src`, `alt`, or `href` in `content.js`
+- After adding a file, update the matching `src`, `alt`, or `href` in `v1/content.js`
 
 ## Editing layout and styles
 
-- `index.html` holds the page structure
-- `styles.css` holds the visual design
-- `script.js` renders the editable content from `content.js`
+- Root `index.html` and `styles.css` make the version directory page
+- `v1/index.html` holds the original editable page structure
+- `v1/styles.css` holds the `v1/` visual design
+- `v1/script.js` renders the editable content from `v1/content.js`
 
 ## GitHub Pages
 
@@ -76,8 +80,7 @@ On pushes to `main`, it stages only the public site files into a Pages artifact:
 
 - `index.html`
 - `styles.css`
-- `content.js`
-- `script.js`
+- `v1/`
 - `v2/`
 - `v3/`
 - `v4/`

@@ -32,8 +32,9 @@ jobs:
       - name: Stage static site
         run: |
           mkdir -p _site
-          cp index.html styles.css content.js script.js .nojekyll _site/
+          cp index.html styles.css .nojekyll _site/
           cp -R assets _site/assets
+          cp -R v1 _site/v1
           cp -R v2 _site/v2
           cp -R v3 _site/v3
           cp -R v4 _site/v4

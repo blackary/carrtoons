@@ -1,6 +1,6 @@
 // Most future content edits should happen in this file.
 // To add a new book or lesson card, copy an object in the matching array below.
-// Images should live under assets/, and PDF links can point to files in the repo root.
+// Images should live under ../assets/ from this folder, and PDF links point back to the repo root.
 
 window.siteContent = {
   hero: {
@@ -15,7 +15,7 @@ window.siteContent = {
       { label: "Meet Karen", href: "#about", className: "button-secondary" },
     ],
     mainImage: {
-      src: "assets/renders/home-collage.png",
+      src: "../assets/renders/home-collage.png",
       alt: "Hand-drawn CarrToons collage with children reading the Bible and scenes from Karen Carr's books",
     },
     sparks: [
@@ -23,7 +23,7 @@ window.siteContent = {
         positionClass: "hero-spark-left",
         rotate: "-5deg",
         image: {
-          src: "assets/crops/hero-candy.png",
+          src: "../assets/crops/hero-candy.png",
           alt: "A hand-drawn scene about candy and temptation from CarrToons",
         },
         caption: "Everyday moments become lessons children can picture.",
@@ -32,7 +32,7 @@ window.siteContent = {
         positionClass: "hero-spark-right",
         rotate: "4deg",
         image: {
-          src: "assets/crops/hero-prayer.png",
+          src: "../assets/crops/hero-prayer.png",
           alt: "A hand-drawn praying child from CarrToons",
         },
         caption: "Bright, welcoming art keeps the purpose front and center.",
@@ -75,14 +75,14 @@ window.siteContent = {
       {
         frameClass: "stacked-page stacked-page-primary",
         image: {
-          src: "assets/renders/word-of-god.png",
+          src: "../assets/renders/word-of-god.png",
           alt: "Sample page from The Wise Child and the Word of God",
         },
       },
       {
         frameClass: "stacked-page stacked-page-secondary",
         image: {
-          src: "assets/renders/context.png",
+          src: "../assets/renders/context.png",
           alt: "Sample page from the Context chapter",
         },
       },
@@ -90,14 +90,14 @@ window.siteContent = {
     chapters: [
       {
         label: "Open the chapter sample: The Word of God",
-        href: "1%20The%20Word%20of%20God%20%20WPDF.pdf",
+        href: "../1%20The%20Word%20of%20God%20%20WPDF.pdf",
       },
-      { label: "Open the chapter sample: Context", href: "2%20Context.pdf" },
+      { label: "Open the chapter sample: Context", href: "../2%20Context.pdf" },
       {
         label: "Open the chapter sample: The Meaning of Words",
-        href: "4%20the%20meaning%20of%20words%20%20copy2.pdf",
+        href: "../4%20the%20meaning%20of%20words%20%20copy2.pdf",
       },
-      { label: "Open the chapter sample: Genre", href: "5%20Genre%20Revised%20copy.pdf" },
+      { label: "Open the chapter sample: Genre", href: "../5%20Genre%20Revised%20copy.pdf" },
     ],
   },
 
@@ -111,7 +111,7 @@ window.siteContent = {
       text:
         "The original Wise Child drawings grew out of Karen's own time teaching Proverbs to her son. The scenes show wise and foolish choices in a way children can immediately recognize.",
       image: {
-        src: "assets/crops/hero-reading.png",
+        src: "../assets/crops/hero-reading.png",
         alt: "A hand-drawn scene of children reading together from CarrToons",
       },
       link: { label: "Read how the Wise Child story began", href: "#about" },
@@ -125,7 +125,7 @@ window.siteContent = {
       text:
         "A memorable household scene becomes a first lesson in desire, self-control, and obedience. It is simple enough for children, but rich enough for conversation.",
       image: {
-        src: "assets/crops/temptation-cover-clean.png",
+        src: "../assets/crops/temptation-cover-clean.png",
         alt: "Cover image for Temptation: A First Lesson",
       },
       link: { label: "See the future resources Karen has in mind", href: "#resources" },
@@ -142,10 +142,10 @@ window.siteContent = {
         title: "The Word of God",
         text: "Begins with God speaking and helps children see why Scripture carries authority.",
         image: {
-          src: "assets/renders/word-of-god.png",
+          src: "../assets/renders/word-of-god.png",
           alt: "Page preview from The Word of God",
         },
-        link: { label: "Read excerpt", href: "1%20The%20Word%20of%20God%20%20WPDF.pdf" },
+        link: { label: "Read excerpt", href: "../1%20The%20Word%20of%20God%20%20WPDF.pdf" },
       },
       {
         layoutClass: "sampler-card-wide sampler-card-right",
@@ -153,10 +153,10 @@ window.siteContent = {
         title: "Context",
         text: "Shows children why the whole message matters before they interpret one small part.",
         image: {
-          src: "assets/renders/context.png",
+          src: "../assets/renders/context.png",
           alt: "Page preview from the Context chapter",
         },
-        link: { label: "Read excerpt", href: "2%20Context.pdf" },
+        link: { label: "Read excerpt", href: "../2%20Context.pdf" },
       },
       {
         layoutClass: "sampler-card-wide sampler-card-left",
@@ -164,10 +164,10 @@ window.siteContent = {
         title: "The Meaning of Words",
         text: "Uses vivid examples to show that words and phrases have to be understood carefully.",
         image: {
-          src: "assets/renders/meaning-page-10.png",
+          src: "../assets/renders/meaning-page-10.png",
           alt: "Page preview from the Meaning of Words chapter",
         },
-        link: { label: "Read excerpt", href: "4%20the%20meaning%20of%20words%20%20copy2.pdf" },
+        link: { label: "Read excerpt", href: "../4%20the%20meaning%20of%20words%20%20copy2.pdf" },
       },
       {
         layoutClass: "sampler-card-postage sampler-card-postage-alt",
@@ -175,10 +175,10 @@ window.siteContent = {
         title: "Genre",
         text: "Helps children notice the difference between commands, stories, letters, and more.",
         image: {
-          src: "assets/renders/genre-page-8.png",
+          src: "../assets/renders/genre-page-8.png",
           alt: "Page preview from the Genre chapter",
         },
-        link: { label: "Read excerpt", href: "5%20Genre%20Revised%20copy.pdf" },
+        link: { label: "Read excerpt", href: "../5%20Genre%20Revised%20copy.pdf" },
       },
     ],
   },
@@ -192,12 +192,12 @@ window.siteContent = {
     ],
     originStory:
       "The Wise Child Book began when Karen was reading Proverbs, sketching what she was learning, and her three-year-old son kept coming back to ask for the pictures again.",
-    action: { label: "Read the preface", href: "1%20Preface%20.pdf" },
+    action: { label: "Read the preface", href: "../1%20Preface%20.pdf" },
     board: [
       {
         frameClass: "portrait-card",
         image: {
-          src: "assets/crops/karen-portrait-clean.png",
+          src: "../assets/crops/karen-portrait-clean.png",
           alt: "Portrait of Karen Carr",
         },
         caption: "Karen Carr, artist, teacher, and creator of CarrToons.",
@@ -206,7 +206,7 @@ window.siteContent = {
         frameClass: "paper-note small-note",
         rotate: "4deg",
         image: {
-          src: "assets/crops/daisy-sketch.png",
+          src: "../assets/crops/daisy-sketch.png",
           alt: "Early drawing of Karen's dog Daisy",
         },
         caption: "One of Karen's first homemade books featured Daisy the dog.",
@@ -215,7 +215,7 @@ window.siteContent = {
         frameClass: "paper-note",
         rotate: "-3deg",
         image: {
-          src: "assets/crops/art-teacher-drawing.png",
+          src: "../assets/crops/art-teacher-drawing.png",
           alt: "Child's drawing of Karen as an art teacher",
         },
         caption: "Her students also drew the teacher who taught them to look closely.",
@@ -256,7 +256,7 @@ window.siteContent = {
       text:
         "Happy colors, welcoming drawings, and a plain purpose belong together here. Children should feel invited in, and parents should know the books are teaching something real.",
       image: {
-        src: "assets/crops/laugh-drawing.png",
+        src: "../assets/crops/laugh-drawing.png",
         alt: "Hand-drawn children laughing together",
       },
     },

@@ -1,6 +1,7 @@
 const { test, expect } = require("@playwright/test");
 
 const BASE_URL = "http://127.0.0.1:8000";
+const V1_URL = `${BASE_URL}/v1/index.html`;
 
 const collectBrokenImages = async (page) =>
   page.locator("img").evaluateAll((images) =>
@@ -19,7 +20,30 @@ const collectImageSources = async (page) =>
   );
 
 test.describe("CarrToons static site", () => {
-  test("desktop: renders content, anchor navigation, and linked PDFs", async ({ page, request }) => {
+  test("root index lists every version and linked pages resolve", async ({ page, request }) => {
+    const versionPaths = [
+      "/v1/index.html",
+      "/v2/index.html",
+      "/v3/index.html",
+      "/v4/index.html",
+      "/v5/index.html",
+    ];
+
+    await page.goto(BASE_URL, { waitUntil: "networkidle" });
+
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("Five different directions");
+    await expect(page.locator(".version-entry")).toHaveCount(5);
+
+    for (const path of versionPaths) {
+      const response = await request.get(`${BASE_URL}${path}`);
+      expect(response.ok(), `Expected ${path} to load`).toBeTruthy();
+    }
+
+    await expect(page.getByRole("link", { name: "Open v1" })).toHaveAttribute("href", "v1/");
+    await expect(page.getByRole("link", { name: "Open v5" })).toHaveAttribute("href", "v5/");
+  });
+
+  test("v1 desktop: renders content, anchor navigation, and linked PDFs", async ({ page, request }) => {
     const pageErrors = [];
     const consoleErrors = [];
     const failedResponses = [];
@@ -36,7 +60,7 @@ test.describe("CarrToons static site", () => {
       }
     });
 
-    await page.goto(BASE_URL, { waitUntil: "networkidle" });
+    await page.goto(V1_URL, { waitUntil: "networkidle" });
 
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(/.+/);
     await expect(page.locator("#purpose-cards .purpose-card")).toHaveCount(3);
@@ -90,7 +114,7 @@ test.describe("CarrToons static site", () => {
     expect(failedResponses).toEqual([]);
   });
 
-  test("mobile: menu toggles, closes, and navigates to sections", async ({ browser, request }) => {
+  test("v1 mobile: menu toggles, closes, and navigates to sections", async ({ browser, request }) => {
     const context = await browser.newContext({
       viewport: { width: 390, height: 844 },
       isMobile: true,
@@ -100,7 +124,7 @@ test.describe("CarrToons static site", () => {
     });
     const page = await context.newPage();
 
-    await page.goto(BASE_URL, { waitUntil: "networkidle" });
+    await page.goto(V1_URL, { waitUntil: "networkidle" });
 
     const menuButton = page.getByRole("button", { name: "Open navigation" });
     const mobileNav = page.locator("#mobile-nav");

@@ -3,159 +3,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CarrToons | Tools to Help Kids Become Wise</title>
+    <title>CarrToons | Version Directory</title>
     <meta
       name="description"
-      content="CarrToons is Karen Carr's bright, hand-drawn collection of children's books and Bible lessons created to help kids grow in wisdom."
+      content="A directory of the CarrToons site directions, with links to v1 through v5."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Shantell+Sans:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="content.js" defer></script>
-    <script src="script.js" defer></script>
   </head>
-  <body>
+  <body class="version-index">
     <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <noscript>
-      <p class="noscript-message">
-        CarrToons uses a small script to load site content from <code>content.js</code>. Please
-        enable JavaScript to view the full site.
+    <header class="catalog-header">
+      <p class="catalog-eyebrow">CarrToons</p>
+      <h1>Five different directions for Karen Carr's site.</h1>
+      <p class="catalog-lede">
+        Each page below answers the same question differently: how should CarrToons introduce
+        Karen's books, drawings, and teaching to children and families?
       </p>
-    </noscript>
-
-    <header class="site-header">
-      <div class="ribbon-shell">
-        <div class="nav-cluster nav-cluster-left" aria-label="Primary">
-          <a class="nav-tile nav-home" href="#home" data-section-link="home">Home</a>
-          <a class="nav-tile nav-about" href="#about" data-section-link="about">About Karen Carr</a>
-        </div>
-
-        <a class="brand-cartouche" href="#home" aria-label="CarrToons home">
-          <span class="brand-name">CarrToons</span>
-          <span class="brand-purpose">Tools to Help Kids Become Wise</span>
-          <span class="brand-verse">Proverbs 4:7</span>
-        </a>
-
-        <div class="nav-cluster nav-cluster-right" aria-label="Primary">
-          <a class="nav-tile nav-books" href="#books" data-section-link="books">Books</a>
-          <a class="nav-tile nav-resources" href="#resources" data-section-link="resources">Other Resources</a>
-        </div>
-
-        <button
-          class="menu-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="mobile-nav"
-          aria-label="Open navigation"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-          Menu
-        </button>
-      </div>
-
-      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile primary">
-        <a class="mobile-link" href="#home" data-section-link="home">Home</a>
-        <a class="mobile-link" href="#about" data-section-link="about">About Karen Carr</a>
-        <a class="mobile-link" href="#books" data-section-link="books">Books</a>
-        <a class="mobile-link" href="#resources" data-section-link="resources">Other Resources</a>
-      </nav>
     </header>
 
-    <main id="main-content">
-      <section class="hero section-panel" id="home" data-reveal>
-        <div class="hero-copy">
-          <p class="eyebrow" id="hero-eyebrow"></p>
-          <h1 id="hero-title"></h1>
-          <p class="hero-lede" id="hero-lede"></p>
-          <div class="hero-actions" id="hero-actions"></div>
-          <p class="wisdom-note" id="hero-note"></p>
-        </div>
-
-        <div class="hero-stage">
-          <div class="hero-main-art">
-            <img id="hero-main-image" src="" alt="" />
+    <main id="main-content" class="catalog-main">
+      <ol class="version-list">
+        <li class="version-entry version-entry-v1">
+          <div class="version-label">
+            <p class="version-number">v1</p>
+            <h2>The original editable homepage</h2>
           </div>
-          <div id="hero-sparks"></div>
-        </div>
-      </section>
+          <p class="version-summary">
+            The single-page site built from Karen's ribbon sketch, with most text and images kept
+            in one editable content file.
+          </p>
+          <a class="version-link" href="v1/">Open v1</a>
+        </li>
 
-      <section class="purpose-strip" id="purpose-cards" aria-label="What CarrToons offers"></section>
-
-      <section class="books-section" id="books">
-        <div class="section-heading" data-reveal>
-          <p class="section-tag" id="books-tag"></p>
-          <h2 id="books-title"></h2>
-          <p id="books-intro"></p>
-        </div>
-
-        <article class="featured-book section-panel" data-reveal>
-          <div class="featured-visuals" id="featured-visuals"></div>
-
-          <div class="featured-copy">
-            <p class="section-tag" id="featured-tag"></p>
-            <h3 id="featured-title"></h3>
-            <p id="featured-description"></p>
-            <ul class="chapter-list" id="featured-chapters"></ul>
-            <p class="featured-note" id="featured-note"></p>
+        <li class="version-entry version-entry-v2">
+          <div class="version-label">
+            <p class="version-number">v2</p>
+            <h2>A brighter multipage author site</h2>
           </div>
-        </article>
+          <p class="version-summary">
+            A separate home, books, about, and resources structure with a scrapbook-like tone and
+            more conventional page-to-page browsing.
+          </p>
+          <a class="version-link" href="v2/">Open v2</a>
+        </li>
 
-        <div class="book-grid" id="book-grid"></div>
-      </section>
-
-      <section class="sampler-section">
-        <div class="section-heading narrow" data-reveal>
-          <p class="section-tag" id="sampler-tag"></p>
-          <h2 id="sampler-title"></h2>
-        </div>
-
-        <div class="sampler-grid" id="sampler-grid"></div>
-      </section>
-
-      <section class="about-section section-panel" id="about" data-reveal>
-        <div class="about-copy">
-          <p class="section-tag" id="about-tag"></p>
-          <h2 id="about-title"></h2>
-          <div id="about-body"></div>
-          <p class="origin-story" id="about-origin-story"></p>
-          <div id="about-action"></div>
-        </div>
-
-        <div class="about-board" id="about-board"></div>
-      </section>
-
-      <section class="resources-section" id="resources">
-        <div class="section-heading" data-reveal>
-          <p class="section-tag" id="resources-tag"></p>
-          <h2 id="resources-title"></h2>
-          <p id="resources-intro"></p>
-        </div>
-
-        <div class="resource-cloud" id="resource-cloud"></div>
-
-        <div class="closing-panel section-panel" data-reveal>
-          <div>
-            <p class="section-tag" id="closing-tag"></p>
-            <h2 id="closing-title"></h2>
-            <p id="closing-text"></p>
+        <li class="version-entry version-entry-v3">
+          <div class="version-label">
+            <p class="version-number">v3</p>
+            <h2>The family reading room</h2>
           </div>
-          <div class="closing-art">
-            <img id="closing-image" src="" alt="" loading="lazy" />
+          <p class="version-summary">
+            A calmer, more curriculum-forward page built around chapter exploration and a reading
+            space feeling.
+          </p>
+          <a class="version-link" href="v3/">Open v3</a>
+        </li>
+
+        <li class="version-entry version-entry-v4">
+          <div class="version-label">
+            <p class="version-number">v4</p>
+            <h2>The most Eric-Carle-inspired layout</h2>
           </div>
-        </div>
-      </section>
+          <p class="version-summary">
+            The airiest single-page direction, with centered sections, illustrated navigation, and
+            the strongest direct nod to Eric Carle's official site.
+          </p>
+          <a class="version-link" href="v4/">Open v4</a>
+        </li>
+
+        <li class="version-entry version-entry-v5">
+          <div class="version-label">
+            <p class="version-number">v5</p>
+            <h2>The large-image scrolling version</h2>
+          </div>
+          <p class="version-summary">
+            A picture-led scroll where large artwork and page excerpts carry most of the rhythm as
+            you move down the page.
+          </p>
+          <a class="version-link" href="v5/">Open v5</a>
+        </li>
+      </ol>
     </main>
-
-    <footer class="site-footer">
-      <p class="footer-line" id="footer-line"></p>
-      <p class="footer-note" id="footer-note"></p>
-    </footer>
   </body>
 </html>
