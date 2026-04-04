@@ -60,4 +60,26 @@ test.describe("CarrToons concept variants", () => {
     const pdfResponse = await request.get(`${BASE_URL}/1%20Preface%20.pdf`);
     expect(pdfResponse.ok()).toBeTruthy();
   });
+
+  test("v5 image-led concept renders and keeps the large visual bands intact", async ({ page, request }) => {
+    const response = await request.get(`${BASE_URL}/v5/index.html`);
+    expect(response.ok()).toBeTruthy();
+
+    await page.goto(`${BASE_URL}/v5/index.html`, { waitUntil: "networkidle" });
+
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("Stories and drawings");
+    await expect(page.locator(".wide-band")).toHaveCount(5);
+    await expect(page.locator(".wide-band img")).toHaveCount(12);
+
+    await page.getByRole("link", { name: "About Karen" }).click();
+    await expect(page).toHaveURL(/#about$/);
+
+    await expect(page.getByRole("link", { name: "Genre" })).toHaveAttribute(
+      "href",
+      "../5%20Genre%20Revised%20copy.pdf"
+    );
+
+    const pdfResponse = await request.get(`${BASE_URL}/5%20Genre%20Revised%20copy.pdf`);
+    expect(pdfResponse.ok()).toBeTruthy();
+  });
 });

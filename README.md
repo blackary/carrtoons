@@ -10,6 +10,7 @@ The site is plain HTML, CSS, JavaScript, image assets, and PDFs. There is no bui
 - `v2/` is a bright multipage author-and-books concept built from Karen's homepage sketch and website notes.
 - `v3/` is a single-page family reading room concept with a more curriculum-forward layout.
 - `v4/` is an Eric-Carle-inspired single-page concept with collage circles, airy white space, and centered content islands.
+- `v5/` is a full-width image-led scroll with large visual bands built from Karen's artwork and page renders.
 
 ## Run locally
 
@@ -36,7 +37,7 @@ npm run qa:smoke
 This covers desktop and mobile navigation, content rendering from `content.js`, image loading,
 and linked PDF availability.
 
-To run the additional concept checks for `v2/` and `v3/`:
+To run the additional concept checks for `v2/` through `v5/`:
 
 ```bash
 npx playwright test tests/concepts.spec.js --reporter=line
@@ -77,6 +78,10 @@ On pushes to `main`, it stages only the public site files into a Pages artifact:
 - `styles.css`
 - `content.js`
 - `script.js`
+- `v2/`
+- `v3/`
+- `v4/`
+- `v5/`
 - `assets/`
 - the specific public excerpt PDFs linked on the site
 - `.nojekyll`
