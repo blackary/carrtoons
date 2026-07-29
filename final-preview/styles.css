@@ -186,11 +186,6 @@ p {
   background: var(--white);
 }
 
-.nav-link.is-current {
-  border-bottom-width: 0.55rem;
-  border-bottom-color: var(--yellow-soft);
-}
-
 .brand {
   display: grid;
   align-content: center;
