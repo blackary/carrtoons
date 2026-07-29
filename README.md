@@ -4,6 +4,19 @@ Static website prototype for Karen Carr's CarrToons project.
 
 The site is plain HTML, CSS, JavaScript, image assets, and PDFs. There is no build step.
 
+## Final preview
+
+`final-preview/` is the current four-page proposal based on Karen's written feedback. It combines
+the bright multipage structure she preferred with her original homepage picture arrangement,
+clear free-resource language, a modest biography, and honest labels for unfinished work.
+
+- Home: `final-preview/index.html`
+- Books: `final-preview/books.html`
+- About Karen: `final-preview/about.html`
+- Other Resources: `final-preview/resources.html`
+- Shared editable book and resource data: `final-preview/content.js`
+- Editing guide: `final-preview/EDITING.md`
+
 ## Versions
 
 - Root files now provide a version directory page that links to each concept.
@@ -45,6 +58,12 @@ To run the additional concept checks for `v2/` through `v6/`:
 npx playwright test tests/concepts.spec.js --reporter=line
 ```
 
+To run the final preview checks:
+
+```bash
+npx playwright test tests/final-preview.spec.js --reporter=line
+```
+
 ## Editing content
 
 Most future edits to `v1/` should happen in `v1/content.js`.
@@ -59,6 +78,10 @@ Most future edits to `v1/` should happen in `v1/content.js`.
 - Optional: set `layoutClass` on a book or lesson card if you want it to use one of the existing alternate layouts instead of the default stacked card style
 
 Versions `v2/` through `v6/` are self-contained HTML and CSS files inside their own folders.
+
+For the current preview, add books and resources in `final-preview/content.js`. Page introductions
+and Karen's biography are written directly in the matching HTML files. See
+`final-preview/EDITING.md` for the short editing checklist.
 
 ## Editing images and PDFs
 
@@ -87,6 +110,7 @@ On pushes to `main`, it stages only the public site files into a Pages artifact:
 - `v4/`
 - `v5/`
 - `v6/`
+- `final-preview/`
 - `assets/`
 - the specific public excerpt PDFs linked on the site
 - `.nojekyll`

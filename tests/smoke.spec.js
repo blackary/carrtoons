@@ -34,6 +34,13 @@ test.describe("CarrToons static site", () => {
 
     await expect(page.getByRole("heading", { level: 1 })).toContainText("Six different directions");
     await expect(page.locator(".version-entry")).toHaveCount(6);
+    await expect(page.getByRole("link", { name: "Open the final preview" })).toHaveAttribute(
+      "href",
+      "final-preview/"
+    );
+
+    const previewResponse = await request.get(`${BASE_URL}/final-preview/index.html`);
+    expect(previewResponse.ok(), "Expected the final preview to load").toBeTruthy();
 
     for (const path of versionPaths) {
       const response = await request.get(`${BASE_URL}${path}`);
