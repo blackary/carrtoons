@@ -116,6 +116,11 @@ and Karen's biography are written directly in the matching HTML files. See
 
 A GitHub Actions workflow is included at `.github/workflows/pages.yml`.
 
+Repository Settings > Pages > Source must be **GitHub Actions**, not deployment
+from the main branch. Otherwise the legacy whole-repository build competes with
+this workflow and can publish tooling and maintainer notes. This setting was
+corrected on September 3, 2026.
+
 On pushes to `main`, it stages only the public site files into a Pages artifact:
 
 - `index.html`
@@ -132,6 +137,8 @@ On pushes to `main`, it stages only the public site files into a Pages artifact:
 - `.nojekyll`
 
 That keeps the site static and ready for GitHub Pages without deploying local tooling files.
+Only HTML, CSS, and JavaScript from `final-preview/` are staged; its editing guide
+and the root `docs/` and `tools/` directories are not website content.
 
 ## Notes
 

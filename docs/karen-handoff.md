@@ -20,6 +20,9 @@ This is a maintainer checklist, not visitor-facing copy.
   downsampling its scans. All 111 pages retain the same text, image dimensions,
   and layout. The largest per-page mean rendered difference is 0.047/255.
   The source file remains untouched. The extracted preface is lossless.
+- Pages publishing is set to the curated GitHub Actions workflow only. A legacy
+  branch deployment was also running and publishing maintainer files; it is now
+  disabled. The public artifact excludes editing guides, docs, and tools.
 
 ## Still needed from Karen
 
