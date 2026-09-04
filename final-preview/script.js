@@ -13,6 +13,13 @@
     { page: "resources", label: "Other Resources", href: "resources.html" },
   ];
 
+  const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+  })[character]);
+
+  const documentLink = ({ label, href }) =>
+    `<a href="${escapeHtml(href)}" target="_blank" rel="noreferrer"><span>${escapeHtml(label)}</span><span aria-hidden="true"> &#8599;</span><span class="visually-hidden"> (opens PDF in a new tab)</span></a>`;
+
   const renderHeader = () => {
     const header = document.querySelector("[data-site-header]");
     if (!header) return;
@@ -74,12 +81,23 @@
                   ? `<ul class="document-links">${book.links
                       .map(
                         ({ label, href }) =>
-                          `<li><a href="${href}" target="_blank" rel="noreferrer">${label}<span aria-hidden="true"> &#8599;</span><span class="visually-hidden"> (opens PDF in a new tab)</span></a></li>`
+                          `<li>${documentLink({ label, href })}</li>`
                       )
                       .join("")}</ul>`
                   : '<p class="coming-note">No download yet</p>'
               }
             </div>
+            ${book.chapters ? `
+                <section class="book-chapters" aria-labelledby="${book.id}-chapters">
+                  <h3 id="${book.id}-chapters">${escapeHtml(book.chapterHeading || "Chapters")}</h3>
+                  <ul class="document-links chapter-list">
+                    ${book.chapters.map((chapter) => `
+                      <li>${chapter.href
+                        ? documentLink(chapter)
+                        : `<div class="chapter-pending"><span>${escapeHtml(chapter.label)}</span><small>${escapeHtml(chapter.status)}</small></div>`
+                      }</li>`).join("")}
+                  </ul>
+                </section>` : ""}
           </article>`
       )
       .join("");

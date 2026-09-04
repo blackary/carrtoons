@@ -69,6 +69,20 @@ test.describe("CarrToons final preview", () => {
     await expect(page.locator(".book-entry")).toHaveCount(3);
     await expect(page.locator(".book-meta strong")).toHaveCount(3);
     await expect(page.locator(".document-links a")).toHaveCount(5);
+    await expect(page.locator("#word-of-god .chapter-list > li")).toHaveCount(7);
+    await expect(page.locator("#word-of-god .chapter-list a")).toHaveCount(2);
+    await expect(page.locator(".chapter-pending")).toHaveCount(5);
+    await expect(page.locator('.chapter-pending a')).toHaveCount(0);
+    await expect(page.locator('#word-of-god .document-links a').first()).toHaveAttribute(
+      'href', '../1%20Preface%20.pdf'
+    );
+    await expect(page.locator('#wise-child .document-links a').last()).toHaveAttribute(
+      'href', '../assets/books/the-wise-child-book-preface.pdf'
+    );
+    await expect(page.locator('#wise-child .document-links a').first()).toHaveAttribute(
+      'href', '../assets/books/the-wise-child-book.pdf'
+    );
+    await expect(page.locator('a[href*="meaning%20of%20words"], a[href*="Genre%20Revised"]')).toHaveCount(0);
 
     const pdfLinks = await page
       .locator('.document-links a[target="_blank"]')
@@ -79,6 +93,19 @@ test.describe("CarrToons final preview", () => {
       expect(response.ok(), `Expected PDF to load: ${href}`).toBeTruthy();
       expect(response.headers()["content-type"]).toContain("application/pdf");
     }
+  });
+
+  test("Karen's exact wording and correct About preface are used", async ({ page }) => {
+    await page.goto(`${PREVIEW_URL}/about.html`, { waitUntil: "networkidle" });
+    await expect(page.getByText("Karen helped children develop basic skills that set them free to be creative with art.")).toBeVisible();
+    await expect(page.getByRole("link", { name: /Read Karen's preface/ })).toHaveAttribute(
+      "href", "../assets/books/the-wise-child-book-preface.pdf"
+    );
+
+    await page.goto(`${PREVIEW_URL}/resources.html`, { waitUntil: "networkidle" });
+    await expect(page.locator(".resource-picture p").last()).toContainText(
+      "provide parents with tools to teach truth in inviting ways."
+    );
   });
 
   test("mobile pages fit the viewport and keep navigation visible", async ({ browser }) => {

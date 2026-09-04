@@ -17,6 +17,22 @@ clear free-resource language, a modest biography, and honest labels for unfinish
 - Shared editable book and resource data: `final-preview/content.js`
 - Editing guide: `final-preview/EDITING.md`
 
+Karen's September wording, correct Wise Child preface, and current complete Wise Child Book
+are included. The Word of God collection lists all seven chapter titles, with download links
+only for the two supplied finished chapters. Outstanding files, contact, and domain handoff
+are recorded in `docs/karen-handoff.md` (not published in the Pages artifact).
+
+The new book downloads live in `assets/books/`, which is deployed automatically. To regenerate
+them and their source-faithful page previews from Karen's supplied PDFs:
+
+```bash
+uv run --with pymupdf --with pillow python tools/prepare_wise_child.py BOOK_PDF CORRECTIONS_PDF
+```
+
+This recompresses the full book's JPEG scans at their original pixel dimensions, retains text
+and page layout, and checks every rendered page for compression error. The preface extraction
+is lossless and excludes the website-instructions page. The original source PDFs are not changed.
+
 ## Versions
 
 - Root files now provide a version directory page that links to each concept.

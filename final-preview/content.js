@@ -5,12 +5,12 @@ window.carrtoonsContent = {
     {
       id: "word-of-god",
       theme: "blue",
-      status: "Available now",
+      status: "2 chapters available",
       label: "Free book chapters",
       title: "The Wise Child and the Word of God",
       description:
-        "Four illustrated chapters help children read the Bible carefully: listening to God's word, noticing context, understanding words, and recognizing genre.",
-      note: "Open any chapter below. Each one is a free resource for families and teachers.",
+        "Seven illustrated chapters help children read the Bible carefully and understand what it says. The completed, colored editions of the first two chapters are available below.",
+      note: "Each chapter is a free resource for families and teachers. The remaining chapters will be posted here in their finished editions.",
       images: [
         {
           src: "../assets/renders/word-of-god.png",
@@ -21,7 +21,9 @@ window.carrtoonsContent = {
           alt: "Illustrated page from the Context chapter",
         },
       ],
-      links: [
+      links: [{ label: "Read the preface", href: "../1%20Preface%20.pdf" }],
+      chapterHeading: "The seven chapters",
+      chapters: [
         {
           label: "The Word of God",
           href: "../1%20The%20Word%20of%20God%20%20WPDF.pdf",
@@ -29,27 +31,36 @@ window.carrtoonsContent = {
         { label: "Context", href: "../2%20Context.pdf" },
         {
           label: "The Meaning of Words",
-          href: "../4%20the%20meaning%20of%20words%20%20copy2.pdf",
+          status: "Coming soon",
         },
-        { label: "Genre", href: "../5%20Genre%20Revised%20copy.pdf" },
+        { label: "Genre", status: "Coming soon" },
+        { label: "Scripture Interprets Scripture", status: "Coming soon" },
+        { label: "Principles and Applications", status: "Coming soon" },
+        {
+          label: "Understanding the Person Who is Writing and the People Described in the Writing",
+          status: "Coming soon",
+        },
       ],
     },
     {
       id: "wise-child",
       theme: "yellow",
-      status: "Preface available",
+      status: "Whole book available",
       label: "Foundational book",
       title: "The Wise Child Book",
       description:
         "This book began with Proverbs, drawings, and a young child who kept asking to hear the pictures explained again. It helps families talk about wise choices one scene at a time.",
-      note: "The complete corrected and colored book will be added when the final file is ready.",
+      note: "Read the whole book, or begin with the story of how it came to be. Both downloads are free. An update to page 51 (the ant lesson) is still to come.",
       images: [
         {
-          src: "../assets/crops/hero-reading.png",
-          alt: "Two children reading together in Karen Carr's Wise Child artwork",
+          src: "../assets/renders/wise-child-wisdom.png",
+          alt: "Page 3 of The Wise Child Book: a wise child and a foolish child, with their parents",
         },
       ],
-      links: [{ label: "Read the preface", href: "../1%20Preface%20.pdf" }],
+      links: [
+        { label: "Read the whole book (45 MB PDF)", href: "../assets/books/the-wise-child-book.pdf" },
+        { label: "Read the preface", href: "../assets/books/the-wise-child-book-preface.pdf" },
+      ],
     },
     {
       id: "temptation",
